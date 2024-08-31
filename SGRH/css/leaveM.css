@@ -1,0 +1,158 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green-primary: #2ecc71; /* Updated primary color */
+  --white: #fff;
+  --light-blue: #75aace;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+/* =============== Navigation ================ */
+.navigation {
+  width: 250px;
+  background: var(--green-primary); /* Updated to green */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  color: var(--white);
+  padding: 20px 0;
+}
+
+.employee-name {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 15px 20px;
+  color: var(--white);
+}
+
+.navigation ul {
+  flex: 1;
+}
+
+.navigation ul li {
+  list-style: none;
+}
+
+.navigation ul li a {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  padding: 15px 20px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.navigation ul li a .icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.navigation ul li a:hover {
+  background: var(--light-blue);
+}
+
+.logout {
+  margin-top: auto;
+}
+
+.logout a {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  padding: 15px 20px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.logout a:hover {
+  background: var(--light-blue);
+}
+
+/* ===================== Main ===================== */
+.main {
+  flex: 1;
+  background: var(--gray);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background: var(--white);
+  border-bottom: 1px solid #ddd;
+}
+
+.icons ion-icon {
+  font-size: 24px;
+  color: var(--green-primary); /* Updated icon color */
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* ============= Task Table ============== */
+.taskTable {
+  margin-top: 20px;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 1;
+}
+
+.taskTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.taskTable th,
+.taskTable td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.taskTable th {
+  background: var(--green-primary); /* Updated to green */
+  color: var(--white); /* Text color for headers */
+}
+
+.taskTable tr:hover {
+  background: var(--light-blue);
+}
+
+/* ===================== Footer ===================== */
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: var(--green-primary); /* Updated footer color */
+  color: var(--white);
+  font-size: 12px;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMPLOYEE</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="css/payment.css" />
+  </head>
+
+  <body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+      <div class="navigation">
+        <div class="employee-name">EMPLOYEE NAME</div>
+        <ul>
+          <li>
+            <a href="manager.html">
+              <span class="icon">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </span>
+              <span class="title">ATTENDANCE MANAGEMENT</span>
+            </a>
+          </li>
+          <li>
+            <a href="leave.html">
+              <span class="icon">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </span>
+              <span class="title">LEAVE MANAGEMENT</span>
+            </a>
+          </li>
+          <li>
+            <a href="payment.html">
+              <span class="icon">
+                <ion-icon name="wallet-outline"></ion-icon>
+              </span>
+              <span class="title">PAYMENT</span>
+            </a>
+          </li>
+        </ul>
+        <div class="logout">
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="log-out-outline"></ion-icon>
+            </span>
+            <span class="title">LOG OUT</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ========================= Main ==================== -->
+      <div class="main">
+        <div class="topbar">
+          <div class="icons">
+            <ion-icon name="notifications-outline"></ion-icon>
+            <ion-icon name="person-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!-- ======================= Payment Form ================== -->
+        <div class="payment-form">
+          <h2>Payment Form</h2>
+          <form id="paymentForm">
+            <div class="form-group">
+              <label for="employeeName">Employee Name</label>
+              <input
+                type="text"
+                id="employeeName"
+                name="employeeName"
+                placeholder="Enter employee name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="absenceHours">Hours of Absence</label>
+              <input
+                type="number"
+                id="absenceHours"
+                name="absenceHours"
+                placeholder="Enter absence hours"
+                min="0"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="hourlyRate">Hourly Rate</label>
+              <input
+                type="number"
+                id="hourlyRate"
+                name="hourlyRate"
+                placeholder="Enter hourly rate"
+                min="0"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="totalPayment">Total Payment</label>
+              <input
+                type="text"
+                id="totalPayment"
+                name="totalPayment"
+                placeholder="Total will be calculated"
+                readonly
+              />
+            </div>
+            <div class="buttons">
+              <button type="button" onclick="calculatePayment()">
+                Calculate
+              </button>
+              <button type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- ======================= Footer ================== -->
+        <div class="footer">© GRH System 2024 - Tous droits réservés.</div>
+      </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/main.js"></script>
+    <!-- ====== ionicons ======= -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      function calculatePayment() {
+        const hours = document.getElementById("absenceHours").value;
+        const rate = document.getElementById("hourlyRate").value;
+        const total = hours * rate;
+        document.getElementById("totalPayment").value = total.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
